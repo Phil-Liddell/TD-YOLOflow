@@ -1,0 +1,58 @@
+[project]
+name            = "YOLOflow"
+version         = "0.1.0"          # update on each release
+description     = "DINO-based object-detection & dataset-builder that plays nicely with TouchDesigner."
+readme          = "README.md"
+license         = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [
+  { name = "Your Name", email = "you@example.com" }
+]
+
+# ── Core runtime dependencies ───────────────────────────────
+dependencies = [
+  "ultralytics>=8.3.0",
+  "torch>=2.0.0",
+  "torchvision>=0.15.0",
+  "opencv-python>=4.5.0",
+  "numpy>=1.20.0",
+  "pillow>=9.0.0",
+  "tqdm>=4.65.0",
+  "python-osc>=1.9.0",
+  "glfw>=2.5.5",
+  "cyndilib>=0.3.0",
+  "timm>=0.6.12"
+]
+
+# ── Optional extras ─────────────────────────────────────────
+[project.optional-dependencies]
+gui = [
+  "PyQt5>=5.15.0"
+]
+
+td  = [
+  "PyQt5>=5.15.0",        # TouchDesigner still needs Qt for the embedded GUIs
+  "opencv-python>=4.5.0",
+  "numpy>=1.20.0",
+  "cyndilib>=0.3.0"
+]
+
+dev = [
+  "pytest>=8.0.0",
+  "ruff>=0.4.0",
+  "black>=24.0.0"
+]
+
+# ── Console entry-points (optional but recommended) ────────
+[project.scripts]
+yoloflow-gui      = "YOLOflow.main:main"     # launches main.py
+yoloflow-download = "YOLOflow.download_models:cli"  # helper
+
+# ── Where the package source lives ─────────────────────────
+[tool.setuptools.packages.find]
+where = ["src"]
+
+# ── Build system spec (PEP 517) ────────────────────────────
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"

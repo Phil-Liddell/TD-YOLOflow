@@ -1,0 +1,45 @@
+{
+  "models": [
+    {
+      "name": "YOLOv11n",
+      "file": "yolo11n.pt", 
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt",
+      "description": "Nano model, fastest but less accurate",
+      "size_mb": 5.4,
+      "input_size": 640
+    },
+    {
+      "name": "YOLOv11s",
+      "file": "yolo11s.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11s.pt",
+      "description": "Small model, good balance of speed and accuracy",
+      "size_mb": 18.4,
+      "input_size": 640
+    },
+    {
+      "name": "YOLOv11m",
+      "file": "yolo11m.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11m.pt",
+      "description": "Medium model, better accuracy than small",
+      "size_mb": 38.9,
+      "input_size": 640
+    },
+    {
+      "name": "YOLOv11l",
+      "file": "yolo11l.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11l.pt",
+      "description": "Large model, high accuracy",
+      "size_mb": 49.0,
+      "input_size": 640
+    },
+    {
+      "name": "YOLOv11x",
+      "file": "yolo11x.pt",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x.pt",
+      "description": "Extra Large model, highest accuracy",
+      "size_mb": 109.0,
+      "input_size": 640
+    }
+  ],
+  "default_model": "YOLOv11s"
+}
