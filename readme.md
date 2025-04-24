@@ -66,7 +66,7 @@
 
 - ☁️ Cloud-based training & inference
 - ⚡ Real-time shared-memory video inputs
-- 🎯 Advanced tracking enhancements (multi-object, re-ID)
+- 🎯 Advanced tracking enhancements (multi-object, re-ID, SAM)
 - 🧩 Expanded tasks: oriented boxes, classification, segmentation
 - ✨ QOL/ General
 
