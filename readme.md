@@ -1,63 +1,89 @@
-TD-Yoloflow
-TD-Yoloflow drops into a project as a single .tox.
-On first run it
+# Let's create the markdown file for the user to download
 
-clones this repo,
+markdown_content = """
+<div align="center">
 
-builds/updates a local virtual-env,
+# 🚀 TD-Yoloflow 🚀
 
-launches a Python application that talks to TouchDesigner over OSC and shared-memory/NDI**.**
+**Integrate Powerful YOLO Workflows Directly into TouchDesigner**
 
-Two launch flavours are provided:
+![Python](https://img.shields.io/badge/python-3.12.9-blue.svg)
+![CUDA](https://img.shields.io/badge/CUDA-11.8.89-green.svg)
 
+</div>
 
-Mode	Command inside the repo	Use-case
-Workflow GUI	python main.py	Capture → Review → Train → Test via a Qt interface
-Headless	python headless.py	Run inference only, no GUI (ideal for install machines)
-Data / Control Path (v0.1)
+---
 
-Direction	Transport
-Video IN → TD-Yoloflow	NDI (shared-memory input coming soon)
-Control TD ↔ TD-Yoloflow	OSC (default in 9000 / out 8860)
-Detections / Frames → TouchDesigner	OSC + Shared-Memory TOP
-GUI Tabs
+## 🌟 Features
 
-Tab	What you do with it	Highlights
-Capture	Record images & YOLO labels from live NDI while a DINO tracker keeps the box on target.	Class manager, FPS-limited recorder, tracker follow.
-Review	Scrub captured frames, tweak boxes, batch-clean the dataset.	Big preview, drag handles, delete images 
-Train	Configure Ultralytics-YOLO, launch training, watch live metrics.	Collapsible parameter panes, timestamped run folders, local or future cheap-cloud back-ends.
-Test	Run real-time inference on any model, stream results back to TD.	Confidence/IoU sliders, annotated frame sender, OSC burst per detection.
+- ✅ One `.tox` file integration
+- ✅ Automatic cloning and setup
+- ✅ OSC & NDI/Shared-memory connectivity
+- ✅ GUI and Headless launch options
 
-Requirements
+---
 
-Component	Version
-Python	3.12.9 (64-bit)
-CUDA Toolkit	11.8.89 
-Note: TD-Yoloflow will still start on CPU-only machines, but training and real-time inference performance will be severely reduced.
+## 🛠️ Launch Modes
 
-Make sure your GPU drivers match CUDA 11.8 before installing the Python dependencies.
+| Mode              | Command                | Description                                         |
+|-------------------|------------------------|-----------------------------------------------------|
+| 🖥️ **Workflow GUI** | `python main.py`       | Capture → Review → Train → Test via Qt interface   |
+| 🚀 **Headless**      | `python headless.py`   | Run inference only (ideal for production setups)   |
 
+---
 
-Roadmap
-Cheaper cloud training & live cloud inference
+## 🔄 Data & Control Pathways (v0.1)
 
-Shared-memory video input for zero-latency grabs
+| Direction                      | Transport                                      |
+|--------------------------------|------------------------------------------------|
+| 🎥 **Video IN → TD-Yoloflow**  | NDI *(shared-memory coming soon)*              |
+| 🎛️ **Control TD ↔ TD-Yoloflow**| OSC *(default: in 9000 / out 8860)*            |
+| 📸 **Frames → TD**             | OSC + Shared-Memory TOP                        |
 
-Stronger Capture-tab tracking (multi-object, re-ID)
+---
 
-New tasks: oriented boxes, classification, segmentation
+## 🎯 GUI Interface
 
-Manual Quick-start
-bash
-Copy
-Edit
+| Tab           | Functionality                                        | Key Features                                                |
+|---------------|------------------------------------------------------|-------------------------------------------------------------|
+| 📷 **Capture**  | Record and track YOLO-labeled images                 | Class manager, FPS-limited, live tracking                   |
+| 🔍 **Review**   | Scrub, edit, and manage datasets                     | Big previews, interactive bounding boxes, batch editing     |
+| 📈 **Train**    | Launch and monitor YOLO model training               | Interactive configs, live metrics, cloud or local           |
+| 🚦 **Test**     | Real-time inference and streaming results            | Adjustable confidence/IoU, frame annotations, OSC feedback  |
+
+---
+
+## 📌 Requirements
+
+| Component     | Version              |
+|---------------|----------------------|
+| 🐍 Python     | 3.12.9 (64-bit)      |
+| 🖥️ CUDA Toolkit | 11.8.89            |
+
+⚠️ **Important:** While CPU-only usage is possible, GPU acceleration is highly recommended for optimal performance. Ensure your GPU drivers match CUDA Toolkit 11.8.
+
+---
+
+## 🚧 Project Roadmap
+
+- ☁️ Cloud-based training & inference
+- ⚡ Real-time shared-memory video inputs
+- 🎯 Advanced tracking enhancements (multi-object, re-ID)
+- 🧩 Expanded tasks: oriented boxes, classification, segmentation
+
+---
+
+## 🚀 Quick-start
+
+```bash
 git clone https://github.com/yourname/td-yoloflow.git
 cd td-yoloflow
 python -m venv .venv
-source .venv/bin/activate        # .venv\Scripts\activate on Windows
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python main.py                   # workflow GUI
-# or
-python headless.py               # headless mode
-The TD-Yoloflow.tox handles these steps automatically inside TouchDesigner.
 
+# GUI Mode
+python main.py
+
+# Headless Mode
+python headless.py
