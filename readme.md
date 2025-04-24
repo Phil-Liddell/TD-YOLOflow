@@ -1,4 +1,3 @@
-# Let's create the markdown file for the user to download
 
 markdown_content = """
 <div align="center">
