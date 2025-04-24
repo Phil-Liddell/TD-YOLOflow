@@ -3,7 +3,7 @@
 
 # 🚀 TD-Yoloflow 🚀
 
-**Integrate Powerful YOLO Workflows Directly into TouchDesigner**
+**Combine Powerful YOLO Workflows With TouchDesigner**
 
 ![Python](https://img.shields.io/badge/python-3.12.9-blue.svg)
 ![CUDA](https://img.shields.io/badge/CUDA-11.8.89-green.svg)
@@ -68,6 +68,7 @@
 - ⚡ Real-time shared-memory video inputs
 - 🎯 Advanced tracking enhancements (multi-object, re-ID)
 - 🧩 Expanded tasks: oriented boxes, classification, segmentation
+- ✨ QOL/ General
 
 ---
 
