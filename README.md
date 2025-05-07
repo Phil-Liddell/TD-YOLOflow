@@ -9,7 +9,6 @@
 - ✅ Single **`.tox`** drop-in for TouchDesigner  
 - ✅ Automatic repository clone & virtual-env setup  
 - ✅ **OSC** control & **NDI / Shared-memory** data paths  
-- ✅ Choose between full **GUI** or **Headless** launch  
 
 ---
 
