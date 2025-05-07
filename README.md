@@ -1,4 +1,4 @@
-# 🚀 TD-Yoloflow 🚀  
+# 🚀 TD-YOLOflow 🚀  
 **Combine Powerful YOLO Workflows With TouchDesigner**
 
 ![Python](https://img.shields.io/badge/python-3.11.0-blue.svg) ![CUDA](https://img.shields.io/badge/CUDA-11.8.89-green.svg)
