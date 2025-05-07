@@ -55,7 +55,7 @@ You can reopen the project later and jump straight to **Launch YOLOflow**; the C
 ## 🚧 Roadmap
 - ☁️ Cheaper cloud training & live cloud inference  
 - ⚡ Shared-memory video **input**  
-- 🎯 Improved Capture-tab tracking (multi-object, re-ID)  
+- 🎯 Improved Capture-tab tracking (multi-object, SAM for better accuracy and segmentation)  
 - 🧩 New tasks: oriented boxes, classification, segmentation  
 - ✨ General quality-of-life improvements  
 
