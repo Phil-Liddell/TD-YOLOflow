@@ -8,7 +8,7 @@
 ## 🌟 Features
 - ✅ Single **`.tox`** drop-in for TouchDesigner  
 - ✅ Automatic repository clone & virtual-env setup  
-- ✅ **OSC** control & **NDI / Shared-memory** data paths  
+- ✅ Full YOLO detection workflow. Capture with auto tracking -> Review/ label data -> Train model (local and cloud options, nano to large model size, training analytics) -> Deploy model 
 
 ---
 
