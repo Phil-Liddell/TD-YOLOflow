@@ -1,58 +1,42 @@
-[project]
-name            = "YOLOflow"
-version         = "0.1.0"          # update on each release
-description     = "DINO-based object-detection & dataset-builder that plays nicely with TouchDesigner."
-readme          = "README.md"
-license         = { file = "LICENSE" }
-requires-python = ">=3.11"
-authors = [
-  { name = "Your Name", email = "you@example.com" }
-]
+[tool.poetry]
+name        = "yoloflow"
+version     = "0.1.2"
+description = "TouchDesigner-oriented YOLO workflow tool"
+authors     = ["Philliddellphia"]
+license     = "MIT"
+readme      = "README.md"
+packages    = [{ include = "yoloflow" }]
 
-# ── Core runtime dependencies ───────────────────────────────
-dependencies = [
-  "ultralytics>=8.3.0",
-  "torch>=2.0.0",
-  "torchvision>=0.15.0",
-  "opencv-python>=4.5.0",
-  "numpy>=1.20.0",
-  "pillow>=9.0.0",
-  "tqdm>=4.65.0",
-  "python-osc>=1.9.0",
-  "glfw>=2.5.5",
-  "cyndilib>=0.3.0",
-  "timm>=0.6.12"
-]
+[tool.poetry.dependencies]
+python       = "^3.11"
 
-# ── Optional extras ─────────────────────────────────────────
-[project.optional-dependencies]
-gui = [
-  "PyQt5>=5.15.0"
-]
+# CUDA-enabled PyTorch (11.8 tool-chain)
+torch        = { version = "2.7.0+cu118",  source = "pytorch-cu118" }
+torchvision  = { version = "0.22.0+cu118", source = "pytorch-cu118" }
 
-td  = [
-  "PyQt5>=5.15.0",        # TouchDesigner still needs Qt for the embedded GUIs
-  "opencv-python>=4.5.0",
-  "numpy>=1.20.0",
-  "cyndilib>=0.3.0"
-]
+# GUI
+PyQt5        = "5.15.11"
 
-dev = [
-  "pytest>=8.0.0",
-  "ruff>=0.4.0",
-  "black>=24.0.0"
-]
+# Core libs
+opencv-python = "4.11.0.86"
+pillow        = "11.2.1"
+pyyaml        = "6.0.2"
+cyndilib      = "0.0.5"
+numpy         = "2.2.5"
+python-osc    = "1.9.3"
+setuptools    = "80.3.0"
+timm          = "1.0.15"
+tqdm          = "4.67.1"
+ultralytics   = "8.3.126"
 
-# ── Console entry-points (optional but recommended) ────────
-[project.scripts]
-yoloflow-gui      = "YOLOflow.main:main"     # launches main.py
-yoloflow-download = "YOLOflow.download_models:cli"  # helper
+[[tool.poetry.source]]
+name     = "pytorch-cu118"
+url      = "https://download.pytorch.org/whl/cu118"
+priority = "explicit"           # only the packages referenced above come from here
 
-# ── Where the package source lives ─────────────────────────
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.poetry.scripts]
+yoloflow = "yoloflow.main:main"
 
-# ── Build system spec (PEP 517) ────────────────────────────
 [build-system]
-requires      = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.7.0"]   # 1.7+ avoids old “default”/source bugs
+build-backend = "poetry.core.masonry.api"

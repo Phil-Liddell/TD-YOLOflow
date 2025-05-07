@@ -1,0 +1,5 @@
+path: C:\Users\PL19437\OneDrive - AVI-SPL\Documents\Experiments\YOLOflow\YOLOflow - Copy (8) - Copy\tabs\../data
+train: images
+val: images
+nc: 6
+names: ['Banana', 'Raspberry Pi', 'Headphones', 'drone']

@@ -1,0 +1,6 @@
+model:
+  custom: ''
+  default: yolo11n.pt
+ndi:
+  prefer_ndi_over_camera: true
+  source_name: TD-OUT

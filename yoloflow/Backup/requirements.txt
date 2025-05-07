@@ -1,0 +1,8 @@
+PyQt5==5.15.11
+cyndilib==0.0.5
+numpy==1.26.4
+pathlib==1.0.1
+timm==1.0.15
+torch==2.6.0+cu118
+tqdm==4.66.4
+ultralytics==8.3.103
